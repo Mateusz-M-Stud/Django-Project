@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ shopping_list.name }}</title>
+</head>
+<body>
+    <h1>{{ shopping_list.name }} - Shopping List</h1>
+    <ul>
+      {% for item in items %}
+        <li>{{ item.name }} - Purchased: {{ item.is_purchased }}</li>
+      {% endfor %}
+    </ul>
+</body>
+</html>

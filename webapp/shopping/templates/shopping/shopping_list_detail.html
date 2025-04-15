@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ shopping_list.name }}</title>
+</head>
+<body>
+    <h1>{{ shopping_list.name }}</h1>
+    <ul>
+        {% for product in shopping_list.products.all %}
+            <li>{{ product.name }} {% if product.is_purchased %}(Purchased){% endif %}</li>
+        {% empty %}
+            <li>No products in this list.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_product' shopping_list.id %}">Add Product</a>
+</body>
+</html>
